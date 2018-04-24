@@ -13,6 +13,19 @@ window.addEventListener("load",function() {
         .enableSound();
     // Load and init audio files.
 
+    Q.scene("titleScreen",function(stage) {
+            var container = stage.insert(new Q.UI.Container({x: Q.width / 2, y: Q.height / 2, fill: "rgba(0,0,0,0.5)"}));
+            var button = container.insert(new Q.UI.Button({
+                asset: "mainTitle.png"
+            }));
+
+            button.on("click",function() {
+                Q.clearStages();
+                Q.stageScene("level1");
+            })
+        }
+    );
+
     Q.scene("level1",function(stage) {
         Q.stageTMX("level.tmx",stage);
         stage.insert(new Q.Player(this));
@@ -53,7 +66,7 @@ window.addEventListener("load",function() {
 
 
 
-    Q.loadTMX("level.tmx, mario_small.json, mario_small.png, goomba.png, goomba.json, bloopa.png, bloopa.json, coin.png, coin.json", function() {
+    Q.loadTMX("level.tmx, mario_small.json, mario_small.png, goomba.png, goomba.json, bloopa.png, bloopa.json, coin.png, coin.json, mainTitle.png", function() {
         Q.compileSheets("mario_small.png","mario_small.json");
         Q.compileSheets("goomba.png","goomba.json");
         Q.compileSheets("bloopa.png","bloopa.json");
@@ -82,10 +95,12 @@ window.addEventListener("load",function() {
             spin: {frames: [0, 1, 2], rate: 1/5, flip: false, loop: true}
         });
 
+
+        //Q.stageScene("level1");
+        Q.stageScene("titleScreen");
         /*Q.animations("fly", EnemyAnimations);
         Q.animations("slime", EnemyAnimations);
         Q.animations("snail", EnemyAnimations);*/
-        Q.stageScene("level1");
         //Q.stageScene('hud', 3, Q('Player').first().p);
 
     }/*, {
