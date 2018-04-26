@@ -146,7 +146,7 @@ window.addEventListener("load",function() {
 
             if(!this.dead) {
                 this.p.gravity = 1;
-                    this.p.ignoreControls = false;
+                this.p.ignoreControls = false;
 
                 if (this.p.landed <= 0) {
                     if (this.p.direction == "right")
@@ -296,4 +296,4 @@ window.addEventListener("load",function() {
         }
     });
 
-    });
+});
