@@ -189,7 +189,7 @@ window.addEventListener("load",function() {
                 type: Q.SPRITE_ENEMY,
                 collisionMask: Q.SPRITE_DEFAULT
             });
-            this.add("2d, animation, default_enemy");
+            this.add("2d, animation, default_enemy, aiBounce");
         },
         step: function(dt) {
             var p = this.p;
