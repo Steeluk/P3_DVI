@@ -20,8 +20,13 @@ window.addEventListener("load",function() {
         stage.viewport.offsetY = 130;
         stage.insert(new Q.Goomba(this, 300, 380));
         stage.insert(new Q.Goomba(this, 400, 380));
+        stage.insert(new Q.Goomba(this, 1000, 380));
+        stage.insert(new Q.Goomba(this, 1500, 380));
+        stage.insert(new Q.Goomba(this, 1600, 380));
         stage.insert(new Q.Bloopa(this, 100, 520));
         stage.insert(new Q.Collectable(this, 200, 480));
+        stage.insert(new Q.Collectable(this, 1700, 480));
+        stage.insert(new Q.Collectable(this, 1720, 480));
         stage.insert(new Q.Princess({x: 1300, y: 380}));
     });
 
